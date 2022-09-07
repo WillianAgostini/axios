@@ -599,4 +599,15 @@ describe('interceptors', function () {
 
     expect(instance.interceptors.response.handlers.length).toBe(0);
   });
+
+  it('should keep interceptors', function () {
+    axios.interceptors.response.use(function (config) {
+      return config
+    });
+
+    var instance = axios.create({
+      baseURL: 'http://test.com/'
+    });
+    expect(instance.interceptors.response.handlers.length).toBe(1);
+  });
 });
