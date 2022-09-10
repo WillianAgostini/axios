@@ -163,6 +163,7 @@ export interface AxiosRequestConfig<D = any> {
     FormData?: new (...args: any[]) => object;
   };
   formSerializer?: FormSerializerOptions;
+  registerProtocols?: string;
 }
 
 export interface HeadersDefaults {
